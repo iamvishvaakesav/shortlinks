@@ -1,0 +1,21 @@
+.Link__parent {
+	/* border: 1px solid salmon; */
+
+	font-size: 1.2rem;
+	@apply flex rounded justify-center  bg-gray-200;
+}
+.Link__parent > div {
+	flex: 1 1 0;
+}
+
+.FullURL__container {
+	@apply bg-green-200;
+}
+
+.ShortUrl__container {
+	@apply bg-orange-200;
+}
+
+.Count__container {
+	@apply bg-blue-200;
+}

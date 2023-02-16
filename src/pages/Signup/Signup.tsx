@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import { handleSignupSubmit, handleSignupValueChange } from "./funSignup";
-
-import { User } from "./userModel";
 
 function Signup() {
 	const [user, setUser] = useState({});
+	const navigate = useNavigate();
+	const [canNavigate, setNavigate] = useState(false);
+	const { setAuth }: any = useAuth();
 	// add validation
+	useEffect(() => {
+		if (canNavigate) {
+			navigate("/");
+		}
+	}, [canNavigate]);
 
 	return (
 		<div>
-			<form onSubmit={(e) => handleSignupSubmit(e, user)}>
+			<form onSubmit={(e) => handleSignupSubmit(e, user, setNavigate, setAuth)}>
 				<div className="formControls">
 					<h2>Name</h2>
 					<input

@@ -1,0 +1,54 @@
+/* Hides the span text of the mobile navigation menu */
+.Visually__hidden {
+	position: absolute;
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.Welcome__container {
+	@apply h-screen;
+}
+.Nav__wrapper {
+	@apply flex text-base justify-between items-center p-4;
+}
+
+.Nav__wrapper {
+	@apply flex items-center justify-between;
+}
+
+/* hides the mobile hamburger in the big screen */
+.Mobile__nav__toggle {
+	display: none;
+}
+
+@media (max-width: 50em) {
+	.Primary__nav,
+	.Primary__nav > * {
+		display: none;
+	}
+
+	.Login__button {
+		display: none;
+	}
+
+	.Mobile__nav__toggle {
+		display: block;
+	}
+	.Close__icon {
+		display: none;
+	}
+}
+
+.Logo {
+}
+
+.Primary__nav > * {
+	@apply m-3;
+}

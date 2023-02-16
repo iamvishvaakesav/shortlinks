@@ -1,0 +1,26 @@
+.HomePrimary__container {
+	height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr 1fr auto;
+	grid-template-areas:
+		"Header"
+		"Shorten"
+		"LinkDisplay"
+		"Footer";
+	align-items: center;
+}
+.UrlForm__continer {
+	grid-area: Shorten;
+}
+.LinkSuper__container {
+	grid-area: LinkDisplay;
+	max-width: 1080px;
+	border: 2px solid salmon;
+}
+.LinkSuper__header {
+	@apply flex rounded;
+}
+.LinkSuper__header > div {
+	font-size: 1.25rem;
+	flex: 1 1 0;
+}

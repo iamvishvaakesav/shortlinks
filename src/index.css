@@ -1,6 +1,32 @@
-body {
-	font-family: sans-serif;
+/* Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* font family */
+	--font-family-primary: "Poppins", sans-serif;
+	--font-family-primary: "Mulish", sans-serif;
+	/* font weights */
+	--font-400: 400;
+	--font-700: 700;
+	--font-italic: italic;
+
+	/* font size */
+	--text-h1: 2.8rem;
+	--text-h3: 1.8rem;
+	/* Color Palette */
+	--bg-primary: hsl(240, 100%, 99%);
+	--text-color-primary: hsl(0, 0%, 30%);
+	--text-color-secondary: hsl(0, 0%, 30%, 83%);
 }
+
+body {
+	background: var(--bg-primary);
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */

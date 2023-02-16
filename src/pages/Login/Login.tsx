@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
 import { handleValueChange } from "../../func/handleValueChange";
-import { handleLoginSubmit } from "./funcLogin";
+import { login } from "./funcLogin";
 
 function Login() {
+	const { setAuth, auth }: any = useContext(AuthContext);
 	const [email, setEmail] = useState("");
 	const [password, setPassowrd] = useState("");
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (auth) {
+			navigate("/home");
+		}
+	}, [auth]);
 
 	return (
 		<div>
 			<form
 				onSubmit={(e) => {
-					handleLoginSubmit(e, email, password);
+					login(e, email, password, setAuth);
 				}}
 			>
 				<div className="formControl">

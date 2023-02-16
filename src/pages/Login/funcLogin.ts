@@ -1,12 +1,18 @@
-import { FormEvent } from "react";
+import { Dispatch, FormEvent, SetStateAction } from "react";
+import axios from "../../api/axios";
 
-export const handleLoginSubmit = (
+export const login = (
 	e: FormEvent<HTMLFormElement>,
 	email: string,
-	password: string
+	password: string,
+	setAuth: Dispatch<SetStateAction<boolean>>
 ) => {
 	e.preventDefault();
-	console.log("clicked");
 	// write the server function
-	console.log(email, password);
+
+	axios.post("/auth/login", { email, password }).then((response) => {
+		if (response.status == 200) {
+			setAuth(response.data.accessToken);
+		}
+	});
 };
